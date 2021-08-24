@@ -11,7 +11,8 @@ const List = [
 
 const dialog =()=>{
     return(
-        <>ssssss
+        <>
+        ssssss
         </>
     )
 }
