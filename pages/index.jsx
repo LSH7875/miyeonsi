@@ -8,16 +8,14 @@ const Image = Styled.img`
     color:red;
     position:absolute;
     z-index:1;
-    background-size:contain;
+    background-size:cover;
+    overflow-y: hidden;
+    width:100vw;
+    height:100vh;
+    object-fit:fill;
     
-    @media(max-width:700px){
-         /* width:object-fit; */
-        min-height:100vh;
-    }
-    @media(min-width:701px){
-        width:100vw;
-        min-height:100vh;
-    }
+    /* width:100vw;
+    min-height:100vh; */
 `
 
 
@@ -60,11 +58,12 @@ const index =()=>{
     }
 console.log(aa);
     return (
-        <div onClick={appClick} onKeyDown={appPress}>
+        <div onClick={appClick} onKeyDown={appPress} style ={{width:'100vw',height:'100vh' }}>
         {/* <Image src = {aa}/> */}
         <Image src = {aa({state})}/>
-        <img src = "/girl.jpg" style = {{position:'absolute', zIndex:'2',left:'50%',transform:'translateX(-50%)'}}/>
-        <div style ={{width:'100%',height:'200px',border:'3px solid red',position:'absolute',transform:'translateY(-50%)',textAlign:'center',top:'100%',zIndex:'5',background:'white',borderRadius:'1em'}}>
+        <img src = "/girl.jpg" style = {{position:'absolute', top:'10%', width:'50%',height:'70%',objectFit:'fill',zIndex:'9',left:'100%',transform:'translateX(-100%)'}}/>
+        <img src = "/girl.jpg" style = {{position:'absolute', top:'10%', width:'50%',height:'70%',objectFit:'fill',zIndex:'3',left:'0%'}}/>
+        <div style ={{width:'100%',height:'14%', paddingTop:'3%', paddingBottom:'3%',border:'3px solid red',position:'absolute',transform:'translateY(-100%)',textAlign:'center',top:'100%',zIndex:'10',background:'white',borderRadius:'1em'}}>
         {list[state.stage][state.number]}
         </div>
         </div>
