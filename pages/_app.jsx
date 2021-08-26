@@ -1,7 +1,7 @@
 import Store from '../store/context'
 import { useReducer,useContext} from 'react'
 import reducer from '../store/reducer'
-
+import '../public/aaa.css'
 const App = ({Component,pageProps})=>{
     const globalContext = useContext(Store);
     const [state,dispatch] = useReducer (reducer,globalContext)
